@@ -1,22 +1,16 @@
-// file: src/components/PhoneInfoList.js
+// src/components/PhoneInfoList.js
 import React, { Component } from 'react';
 import PhoneInfo from './PhoneInfo';
 
 class PhoneInfoList extends Component {
   static defaultProps = {
-    list: [],
-    onRemove: () => console.warn('onRemove not defined'),
+    data: []
   }
 
   render() {
-    const { data, onRemove } = this.props;
+    const { data } = this.props;
     const list = data.map(
-      info => (
-        <PhoneInfo
-          key={info.id}
-          info={info}
-          onRemove={onRemove}
-        />)
+      info => (<PhoneInfo key={info.id} info={info}/>)
     );
 
     return (
